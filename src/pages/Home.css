@@ -1,0 +1,25 @@
+.Introsection{
+    background: url('https://images.unsplash.com/photo-1536882240095-0379873feb4e?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.sliding-backgrounds {
+    position: relative;
+    overflow: hidden;
+}
+
+.sliding-backgrounds::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(90, 244, 90, 0.3); /* Adjust the color and opacity as needed */
+    transition: width 0.3s ease-in-out;
+}
+
+.sliding-backgrounds:hover::before {
+    width: 100%;
+}

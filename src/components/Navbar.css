@@ -1,0 +1,43 @@
+/* Add this CSS in your stylesheet or within a <style> tag in your React component */
+
+.sliding-background {
+    position: relative;
+    overflow: hidden;
+}
+
+.sliding-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(19, 218, 19, 0.3); /* Adjust the color and opacity as needed */
+    transition: width 0.3s ease-in-out;
+}
+
+.sliding-background:hover::before {
+    width: 100%;
+}
+
+.underline-hover {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3px; /* Adjust as needed */
+    cursor: pointer;
+}
+
+.underline-hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: #037503; /* Adjust the color as needed */
+    transition: width 0.3s ease-in-out;
+}
+
+.underline-hover:hover::after {
+    width: 100%;
+}
