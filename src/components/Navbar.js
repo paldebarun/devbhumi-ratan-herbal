@@ -6,6 +6,7 @@ import '../components/Navbar.css'
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { IoMdHome } from "react-icons/io";
+import logo from '../images/logo.png'
 
 const Navbar = ({scrollToRef,productRef,contactRef}) => {
 
@@ -65,9 +66,9 @@ const Navbar = ({scrollToRef,productRef,contactRef}) => {
       
   return (
     <div className='w-screen relative h-auto flex justify-between items-center p-[30px] '>
-        <div onClick={()=>{handleOnclick("home")}}  className={inHome ?'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  hidden sm:flex  text-lg lg:text-3xl font-extrabold text-green-700' : 'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  flex text-lg lg:text-3xl font-extrabold text-green-700'}>
-            L O
-        </div>
+      
+            <img src={logo} onClick={()=>{handleOnclick("home")}} className='w-[40px] xl:w-[50px] xl:h-[50px] hover:scale-110 duration-200 transition-all hover:cursor-pointer h-[40px] hidden sm:flex ' />
+      
 
        {inHome && <div className='hidden sm:flex gap-[20px] items-center'>
             <div className='underline-hover text-green-700  ' onClick={handleScrollToAbout}>About us</div>
@@ -77,7 +78,7 @@ const Navbar = ({scrollToRef,productRef,contactRef}) => {
         </div>}
 
         { inHome && <div className='sm:hidden'>
-            {openmenu ?<div className=' absolute w-[200px] bg-slate-100 rounded-md p-3 flex gap-[20px] flex-col items-center right-[20px] top-4'>
+            {openmenu ?<div className=' absolute z-20 w-[200px] bg-slate-100 rounded-md p-3 flex gap-[20px] flex-col items-center right-[20px]  top-4'>
 
             <div className='underline-hover text-green-700 ' onClick={handleScrollToAbout}>About us</div>
             <div className='underline-hover text-green-700 ' onClick={handleScrollToproduct}>Products</div>

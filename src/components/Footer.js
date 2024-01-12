@@ -80,7 +80,8 @@ const Footer = ({scrollToRef,productRef,contactRef}) => {
     
 
   return (
-    <div className='w-full  flex flex-col sm:flex-row gap-[30px] sm:gap-0 justify-center sm:justify-between items-center px-3 h-[200px] bg-amber-100'>
+    <div className='bg-amber-100'>
+    <div className='w-full  flex flex-col sm:flex-row gap-[30px] sm:gap-0 justify-center sm:justify-between items-center px-3 h-[200px] '>
       <div className='flex  gap-[30px] sm:gap-[15px] '>
       <motion.div
        variants={fadeInAnimationVariants}
@@ -158,6 +159,12 @@ onClick={()=>{handleOnclick("twitter")}}
         custom='7'
             className='sliding-background text-[10px] sm:text-md hover:cursor-pointer text-green-700 border border-green-700 p-2'  >Subscribe</motion.div>
         </div>}
+
+        
+    </div>
+
+    <div className='text-[10px] sm:text-xl'>Copyright Ⓒ 2024 Debarun. All Rights Reserved.</div>
+    <div className='w-screen h-[20px]'></div>
     </div>
   )
 }

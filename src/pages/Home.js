@@ -41,12 +41,12 @@ const Home = () => {
   const contactRef = useRef(null);
 
   return (
-    <div className='px-3 h-auto overflow-x-hidden'>
+    <div className='px-3 h-auto flex flex-col gap-[50px] overflow-x-hidden'>
       {/* Navigation bar */}
       <Navbar scrollToRef={aboutRef} contactRef={contactRef} productRef={productRef} />
       {/* introsection */}
-      <div className='Introsection p-2 flex overflow-x-hidden  w-[10/12] gap-[20px] h-[500px]  flex-col justify-center items-center  '>
-        <div className='flex font-bold t text-4xl h-auto sm:text-8xl text-green-700'>
+      <div className='Introsection  p-2 flex overflow-x-hidden  w-[10/12] gap-[20px] h-[500px] xl:h-[900px] flex-col justify-center items-center  '>
+        <div className='flex font-bold bg-opacity-100  text-4xl h-auto sm:text-7xl xl:text-9xl text-white'>
           {LogoText.map((character, index) => (
             <motion.div
               variants={fadeInAnimationVariants}
@@ -59,13 +59,13 @@ const Home = () => {
             </motion.div>
           ))}
         </div>
-        <div className='text-green-700'>HOLISTIC HEALTH</div>
-        <div className='w-[100px] sm:w-[200px] h-[5px] rounded-xl bg-green-700'></div>
+
+        <div className='w-[100px] sm:w-[200px] h-[5px] rounded-xl bg-white'></div>
       </div>
       {/* product section */}
       <div ref={productRef} className='w-screen h-[200px] items-center justify-center flex py-3 flex-col gap-[15px]'>
-        <div className='text-3xl text-green-700'>OUR PRODUCTS</div>
-        <div className='w-[100px] h-[5px] rounded-lg bg-green-700'></div>
+        <div className='text-3xl lg:text-5xl text-green-700'>OUR PRODUCTS</div>
+        <div className='w-[100px] lg:w-[200px] h-[5px] rounded-lg bg-green-700'></div>
       </div>
       <div className='flex flex-col'>
         <div className='w-screen h-[100px]'></div>
@@ -74,8 +74,8 @@ const Home = () => {
       </div>
       <div className='w-screen h-[200px]'></div>
       {/* about us section */}
-      <div ref={aboutRef} className='flex h-auto xl:flex-row  md:h-[500px] flex-col xl:gap-0 gap-[50px]'>
-        <div className='xl:w-6/12 h-full '>
+      <div ref={aboutRef} className='flex h-auto items-center xl:justify-center xl:flex-row  md:h-[600px] flex-col xl:gap-[30px] gap-[50px]'>
+        <div className='w-9/12 xl:w-[800px] h-full '>
           <img src={aboutpagebackgrounde} className='w-full h-full' alt='about-background' />
         </div>
         <div className='flex w-full xl:w-6/12  flex-col items-center gap-[20px]'>
@@ -95,7 +95,7 @@ const Home = () => {
       </div>
       <div className='w-screen h-[300px]'></div>
       {/* contact us form */}
-      <div ref={contactRef} className='flex  flex-col lg:flex-row lg:gap-0 gap-[20px]'>
+      <div ref={contactRef} className='flex items-center  flex-col lg:flex-row lg:gap-0 gap-[20px]'>
         <LoadScript googleMapsApiKey='AIzaSyD1H6vYzRDDrv3LCP0idGuSTiACkyF0yr8'>
           <GoogleMap zoom={10} center={center} mapContainerStyle={containerStyle}>
             <Marker position={center} />
