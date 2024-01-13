@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useLocation } from 'react-router-dom';
 
-const ContactForm = () => {
+const ContactForm = ({formtype}) => {
 
 
     const { register, handleSubmit, formState: { errors} , setError } = useForm();
@@ -27,6 +27,11 @@ const ContactForm = () => {
    
          
          
+          <div className='flex flex-col items-center justify-center'>
+
+     
+
+        
 
           <form onSubmit={handleSubmit(onSubmit)} className=' h-[600px] p-5 w-full lg:w-6/12 gap-[20px] flex flex-col justify-center items-center'>
                 <div className='flex flex-col w-full gap-[20px] sm:flex-row sm:justify-center items-center'>
@@ -76,8 +81,11 @@ const ContactForm = () => {
                 </div>
               
 
-                <button type="submit" className='sliding-background hover:scale-110 transition-all duration-200 bg-green-700 text-white p-3 rounded-sm hover:cursor-pointer'>Submit</button>
+                {formtype==="contact" && <button type="submit" className='sliding-background hover:scale-110 transition-all duration-200 bg-green-700 text-white p-3 rounded-sm hover:cursor-pointer'>Contact us</button>}
+
+                {formtype==="enquire" && <button type="submit" className='sliding-background hover:scale-110 transition-all duration-200 bg-green-700 text-white p-3 rounded-sm hover:cursor-pointer'>Enquire</button>}
             </form>
+            </div>
 
 
   )

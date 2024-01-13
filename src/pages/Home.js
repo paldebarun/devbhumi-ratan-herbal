@@ -101,7 +101,7 @@ const Home = () => {
             <Marker position={center} />
           </GoogleMap>
         </LoadScript>
-        <ContactForm />
+        <ContactForm formtype={"contact"} />
       </div>
       <div className='w-full h-[100px]'></div>
       {/* footer section */}
