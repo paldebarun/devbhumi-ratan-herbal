@@ -21,7 +21,7 @@ const Product = ({image,description,product}) => {
   return (
     <div onClick={handleProductOnclickHandler}  className='hover:scale-105 m-5  hover:cursor-pointer transition-all duration-200  py-5 flex flex-col  w-full md:w-[300px] lg:w-[350px] justify-between shadow-lg gap-[20px] h-[660px] sm:h-[700px] items-center'>
     
-    <img src={product.image} className=' w-[200px] sm:w-full h-auto  ' />
+    <img src={product.image} className=' w-[200px] h-[250px] sm:w-full   ' />
     
     <div className='w-full h-auto flex justify-center items-center'>
         <div className='w-3/12 h-[5px] bg-green-700 rounded-full'>
@@ -29,7 +29,7 @@ const Product = ({image,description,product}) => {
         </div>
     </div>
     
-    <div className='font-bold text-green-700 text-3xl sm:text-2xl '>{product.name}</div>
+    <div className='font-bold text-green-700 text-3xl sm:text-xl lg:text-2xl '>{product.name}</div>
 
     <div className='w-full  text-center py-5 px-5 text-slate-500'>
 
