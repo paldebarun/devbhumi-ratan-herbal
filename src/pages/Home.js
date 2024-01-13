@@ -84,12 +84,7 @@ const Home = () => {
             <div className='w-[50px] h-[5px] bg-green-700 rounded-full' />
           </div>
           <div className='px-2'>
-            Welcome to Lombok, a sanctuary for plant lovers located in the heart of Chandigarh. Since 2019, we've been
-            passionately curating a diverse collection of plants, each selected for its beauty, health, and ability to
-            thrive in diverse environments. At our core, sustainability drives our practices—from eco-conscious
-            packaging to water-wise gardening guidance. More than just a shop, we're a community hub, offering workshops,
-            events, and expert advice to nurture your green journey. Join us in embracing nature's magic and enhancing
-            your living spaces with our handpicked botanical treasures.
+            Established in 1984. Devbhumi Ratan Herbal is a tapestry woven with threads of tradition, innovation and a profound respect for nature. Rooted in the lap of Himalayas, our journey began with a vision to unlock the secrets of ancient herbal wisdom. With a deep understanding of the rich biodiversity that graces the Devbhumi (Land of the Gods), we embarked on a mission to harness the healing power of the herbs that thrive in this sacred soil.
           </div>
         </div>
       </div>
