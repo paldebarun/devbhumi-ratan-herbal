@@ -39,22 +39,28 @@ const ProductPage = () => {
   }, [location.state.product]);
   
   return (
-    <div className={enquirybox ?'relative ':'relative'}>
+    <div className=' relative '>
      <Navbar  />
-    {enquirybox && <div className='w-screen blur-[10px] opacity-80 h-full bg-gradient-to-r from-black to-slate-500 absolute z-10'>
+    {enquirybox && <div className='w-screen  opacity-65 bg-white top-0  h-full  absolute z-10'>
 
       
     </div>}
 
     <div className='w-full h-[70px]'></div>
     
-    {/* <div className='absolute bg-white border w-[400px] h-[600px]'>
 
-    </div> */}
-   {enquirybox && <div className='w-screen h-auto z-20     absolute  flex flex-col items-center p-3 '  >
+   {enquirybox &&
+    <div className='w-screen z-20  p-3 flex justify-center absolute '>
+   
+    <div className='border  h-[700px] shadow-2xl rounded-3xl relative  bg-white  flex flex-col items-center p-3 '  >
+    {/* <div className='w-full h-[50px] bg-slate-500 absolute top-0 rounded-3xl'></div> */}
    <ContactForm formtype={"enquire"} className='bg-white '/>
    <IoIosClose onClick={HandleEnquiryBox} className='border hover:scale-110 transition-all duration-200 bg-white hover:cursor-pointer rounded-full w-[30px] h-[30px]' />
-   </div>}
+   </div>
+   
+   </div>
+   
+   }
    
   <div className='w-screen h-[100px]'></div>
 
@@ -68,8 +74,6 @@ const ProductPage = () => {
     <div className=' xl:text-4xl'>{product.name}</div>
     <div className='w-auto text-center sm:text-left text-[7px] sm:text-sm md:text-[8px] lg:text-[15px] xl:text-[20px] '>{product.description}</div>
     </div>
-    
-
 
     <div className= ' sliding-backgrounde hover:cursor-pointer text-white bg-red-600 text-[10px] md:text-sm w-[70px] md:w-[100px] rounded-md p-3' onClick={HandleEnquiryBox}>Enquiry</div>
 
@@ -100,7 +104,7 @@ const ProductPage = () => {
 
             </div>
     
-    <div className='w-screen h-[100px]'></div>
+     <div className='w-screen h-[100px]'></div>
 
     <Footer/>        
 
