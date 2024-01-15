@@ -53,7 +53,7 @@ const ProductPage = () => {
     <div className='w-screen z-20  p-3 flex justify-center absolute '>
    
     <div className='border  h-[700px] shadow-2xl rounded-3xl relative  bg-white  flex flex-col items-center p-3 '  >
-    {/* <div className='w-full h-[50px] bg-slate-500 absolute top-0 rounded-3xl'></div> */}
+    
    <ContactForm formtype={"enquire"} className='bg-white '/>
    <IoIosClose onClick={HandleEnquiryBox} className='border hover:scale-110 transition-all duration-200 bg-white hover:cursor-pointer rounded-full w-[30px] h-[30px]' />
    </div>

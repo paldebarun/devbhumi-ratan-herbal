@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useNavigate } from 'react-router-dom';
 
-const Product = ({product}) => {
+const Product = ({product,setEnquiryBoxOpen}) => {
   const navigate=useNavigate();
 
   const handleProductOnclickHandler=()=>{
@@ -12,9 +12,9 @@ const Product = ({product}) => {
 
   }
 
-  const HandleEnquiryBox=()=>{
-    
-    
+  const HandleEnquiryBox=(event)=>{
+    event.stopPropagation();
+    setEnquiryBoxOpen(true);
     
   }
 

@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 
 import { Autoplay } from 'swiper/modules';
 
-const Productwiper = () => {
+const Productwiper = ({setEnquiryBoxOpen}) => {
     
     const [slidesPerView, setSlidesPerView] = useState(3); // Default value
     
@@ -60,7 +60,7 @@ const Productwiper = () => {
 
     {productdata.map((product, index) => (
         <SwiperSlide  key={product} virtualIndex={index}>
-          <Product product={product}  image={product.image} description={product.description} />
+          <Product setEnquiryBoxOpen={setEnquiryBoxOpen} product={product}  image={product.image} description={product.description} />
         </SwiperSlide>
         
       ))}

@@ -4,10 +4,10 @@ import { toast } from 'react-hot-toast';
 import { useLocation } from 'react-router-dom';
 
 const ContactForm = ({formtype}) => {
-
-
+    
+    
     const { register, handleSubmit, formState: { errors} , setError } = useForm();
-
+    
     const onSubmit = (data) => {
         
         console.log("this is contact form data ", data);
@@ -72,9 +72,9 @@ const ContactForm = ({formtype}) => {
                 </div>
                 <div className='flex flex-col  items-start gap-[10px]'>
                    
-                    <textarea 
+                    <input 
                         placeholder="Message" 
-                        className='border outline-none px-5 py-7 w-full sm:w-[420px] xl:w-[620px] rounded-md bg-slate-200'
+                        className='border outline-none px-5 py-7 w-full sm:w-[420px] xl:w-[620px] h-[150px] rounded-md bg-slate-200'
                         {...register('message', { required: true })}
                     />
                     {errors.message && <span className='text-red-500 text-[10px]'>*Message is required</span>}

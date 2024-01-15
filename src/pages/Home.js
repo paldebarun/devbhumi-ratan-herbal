@@ -3,14 +3,20 @@ import Navbar from '../components/Navbar';
 import './Home.css';
 import Productwiper from '../components/Productwiper';
 import aboutpagebackgrounde from '../images/aboutpagebackground.png';
-import { useRef } from 'react';
+import { useRef,useState } from 'react';
 import Footer from '../components/Footer';
 import LogoText from '../constants/LogoText';
 import { motion } from 'framer-motion';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import ContactForm from '../components/ContactForm';
+import { IoIosClose } from "react-icons/io";
 
 const Home = () => {
+
+  const [enquirybox,setEnquiryBoxOpen ] = useState(false);
+  
+  
+
   const center = {
     lat: 30.7333,
     lng: 76.7794,
@@ -36,14 +42,23 @@ const Home = () => {
     }),
   };
 
+
+
+  const HandleEnquiryBox=()=>{
+
+    setEnquiryBoxOpen(!enquirybox);
+  }
+
   const aboutRef = useRef(null);
   const productRef = useRef(null);
   const contactRef = useRef(null);
-
+  
   return (
-    <div className='px-3 h-auto flex flex-col gap-[50px] overflow-x-hidden'>
+    <div className='px-3 relative h-auto flex flex-col gap-[50px] overflow-x-hidden'>
       {/* Navigation bar */}
       <Navbar scrollToRef={aboutRef} contactRef={contactRef} productRef={productRef} />
+      {enquirybox && <div className='w-screen  opacity-65 bg-white top-0  h-full  absolute z-10'>
+</div>}
       {/* introsection */}
       <div className='Introsection  p-2 flex overflow-x-hidden  w-[10/12] gap-[20px] h-[500px] xl:h-[900px] flex-col justify-center items-center  '>
         <div className='flex font-bold bg-opacity-100  text-4xl h-auto sm:text-7xl xl:text-9xl text-white'>
@@ -60,8 +75,24 @@ const Home = () => {
           ))}
         </div>
 
+       
+
         <div className='w-[100px] sm:w-[200px] h-[5px] rounded-xl bg-white'></div>
       </div>
+
+      {enquirybox &&
+    <div className='w-screen z-30 top-[30%] p-3 flex items-center justify-center absolute '>
+    
+      
+    <div className='border  h-[700px] shadow-2xl rounded-3xl relative  bg-white  flex flex-col items-center p-3 '>
+    
+   <ContactForm formtype={"enquire"} className='bg-white '/>
+   <IoIosClose onClick={HandleEnquiryBox} className='border hover:scale-110 transition-all duration-200 bg-white hover:cursor-pointer rounded-full w-[30px] h-[30px]' />
+   </div>
+   
+   </div>
+   
+   }
       {/* product section */}
       <div ref={productRef} className='w-screen h-[200px] items-center justify-center flex py-3 flex-col gap-[15px]'>
         <div className='text-3xl lg:text-5xl text-green-700'>OUR PRODUCTS</div>
@@ -70,7 +101,7 @@ const Home = () => {
       <div className='flex flex-col'>
         <div className='w-screen h-[100px]'></div>
         {/* products slider */}
-        <Productwiper />
+        <Productwiper setEnquiryBoxOpen={setEnquiryBoxOpen} />
       </div>
       <div className='w-screen h-[200px]'></div>
       {/* about us section */}
