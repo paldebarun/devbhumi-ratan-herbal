@@ -2,18 +2,46 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useLocation } from 'react-router-dom';
+import axios from 'axios'
 
 const ContactForm = ({formtype}) => {
     
     
-    const { register, handleSubmit, formState: { errors} , setError } = useForm();
+    const { register, handleSubmit, formState: { errors} , setError,reset  } = useForm();
     
-    const onSubmit = (data) => {
-        
-        console.log("this is contact form data ", data);
-        
-        toast.success("The message is submitted");
-    }
+    const onSubmit = async (data) => {
+        if (formtype === "enquire") {
+          console.log("data ", data);
+          const toastid = toast.loading('loading');
+          try {
+            const response = await axios.post('https://devbhumi0-3.onrender.com/api/v1/sendmail', data);
+            console.log("this is response", response);
+            toast.dismiss(toastid);
+            toast.success('your request is saved');
+          } catch (error) {
+            console.log("this is the error ", error);
+            toast.dismiss(toastid);
+            toast.error("server error");
+          }
+        } 
+        else {
+          console.log("data ", data);
+          const toastid = toast.loading('loading');
+          try {
+            const response = await axios.post('https://devbhumi0-3.onrender.com/api/v1/sendcontactdetails', data);
+            console.log("this is response", response);
+            toast.dismiss(toastid);
+            toast.success('your contact details are saved');
+          } catch (error) {
+            console.log("this is the error ", error);
+            toast.dismiss(toastid);
+            toast.error("server error");
+          }
+        }
+
+        reset();
+      };
+    
     
 
     const location=useLocation();
@@ -70,7 +98,7 @@ const ContactForm = ({formtype}) => {
                     />
                     {errors.email && <span className='text-red-500 text-[10px]'>*Email is required</span>}
                 </div>
-                <div className='flex flex-col  items-start gap-[10px]'>
+               {formtype==="enquire" && <div className='flex flex-col  items-start gap-[10px]'>
                    
                     <input 
                         placeholder="Message" 
@@ -78,7 +106,7 @@ const ContactForm = ({formtype}) => {
                         {...register('message', { required: true })}
                     />
                     {errors.message && <span className='text-red-500 text-[10px]'>*Message is required</span>}
-                </div>
+                </div>}
               
 
                 {formtype==="contact" && <button type="submit" className='sliding-background hover:scale-110 transition-all duration-200 bg-green-700 text-white p-3 rounded-sm hover:cursor-pointer'>Contact us</button>}
