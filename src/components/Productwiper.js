@@ -60,7 +60,7 @@ const Productwiper = ({setEnquiryBoxOpen}) => {
 
     {productdata.map((product, index) => (
         <SwiperSlide  key={product} virtualIndex={index}>
-          <Product setEnquiryBoxOpen={setEnquiryBoxOpen} product={product}  image={product.image} description={product.description} />
+          <Product setEnquiryBoxOpen={setEnquiryBoxOpen} product={product}   />
         </SwiperSlide>
         
       ))}

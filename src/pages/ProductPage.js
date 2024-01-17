@@ -66,7 +66,7 @@ const ProductPage = () => {
 
     <div className='flex flex-col sm:flex-row gap-[20px] w-screen px-[20px] items-center sm:items-start md:items-center'>
  
-    <img src={product.image} className=' rounded-xl w-[200px] h-6/12 sm:w-4/12 sm:h-5/12' />
+    <img src={product.image} alt="productimage" className=' rounded-xl w-[200px] h-6/12 sm:w-4/12 sm:h-5/12' />
     
     <div className='flex items-center flex-col h-full justify-between gap-[15px] sm:gap-[15px] md:gap-[60px]'>
     

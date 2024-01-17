@@ -107,7 +107,7 @@ const Home = () => {
       {/* about us section */}
       <div ref={aboutRef} className='flex h-auto items-center xl:justify-center xl:flex-row  md:h-[600px] flex-col xl:gap-[30px] gap-[50px]'>
         <div className='w-9/12 xl:w-[800px] h-full '>
-          <img src={aboutpagebackgrounde} className='w-full h-full' alt='about-background' />
+          <img src={aboutpagebackgrounde}  className='w-full h-full' alt='about-background' />
         </div>
         <div className='flex w-full xl:w-6/12  flex-col items-center gap-[20px]'>
           <div className='w-full flex items-center flex-col gap-[15px]'>
